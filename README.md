@@ -1,4 +1,4 @@
-# 🏨 Assistant virtuel RAG — Hôtel Le Belvédère
+#  Assistant virtuel RAG — Hôtel Le Belvédère
 
 ![Python](https://img.shields.io/badge/Python-3.13-blue) ![Hugging Face](https://img.shields.io/badge/🤗-Transformers-yellow) ![RAG](https://img.shields.io/badge/NLP-RAG-teal) ![Local](https://img.shields.io/badge/100%25-local%20%26%20open%20source-green)
 
@@ -12,7 +12,7 @@ Assistant conversationnel qui répond aux questions des clients d'un hôtel **un
 
 Un hôtel de 42 chambres à Annecy, en pleine saison, voit son équipe de réception réduite et submergée de questions répétitives (horaires, tarifs, spa, animaux, wifi…). Objectif : automatiser ces réponses **sans jamais inventer d'information** (tarif, service, horaire) qui engagerait l'établissement.
 
-## 🧪 Démarche
+##  Démarche
 
 Trois stratégies ont été implémentées et comparées sur le même jeu de test (3 questions couvertes par la documentation + 1 question hors périmètre) :
 
@@ -20,7 +20,7 @@ Trois stratégies ont été implémentées et comparées sur le même jeu de tes
 2. **Contexte complet** — toute la documentation (~1 400 mots) est injectée dans chaque prompt.
 3. **RAG** — recherche sémantique des 2 rubriques les plus pertinentes, seules injectées dans le prompt.
 
-## 🏗️ Architecture du pipeline RAG
+##  Architecture du pipeline RAG
 
 ```mermaid
 flowchart LR
@@ -67,14 +67,14 @@ Assistant: Je ne sais pas, je vous invite à contacter la réception.
 - *Traçabilité* : chaque réponse est accompagnée de ses sources et de leur score de similarité.
 - *Détection du hors-périmètre* : les questions non couvertes obtiennent des scores nettement plus faibles (≈ 0,2 contre ≈ 0,6), utilisables comme seuil de rejet.
 
-## 🛠️ Stack technique
+## Stack technique
 
 `Python 3.13` · `transformers` · `sentence-transformers` · `torch` · `pypdf` · `numpy` · `pandas` · `scikit-learn` (t-SNE) · `matplotlib`
 
-## 🚀 Installation et exécution
+##  Installation et exécution
 
 ```bash
-git clone <url-du-repo>
+git clone https://github.com/ignasska11/rag-hotel-belvedere.git
 cd rag-hotel-belvedere
 
 # avec uv
@@ -87,7 +87,7 @@ jupyter notebook rag_hotel_belvedere.ipynb
 
 > Au premier lancement, les deux modèles (~1,5 Go) sont téléchargés depuis Hugging Face puis mis en cache.
 
-## 📁 Structure du projet
+##  Structure du projet
 
 ```
 rag-hotel-belvedere/
@@ -111,7 +111,7 @@ rag-hotel-belvedere/
 - Seuil de similarité pour rejeter les questions hors sujet avant l'appel au LLM
 - Interface de chat **Gradio / Streamlit** avec mémoire conversationnelle
 
-## 🧠 Compétences mobilisées
+##  Compétences mobilisées
 
 NLP · LLM · RAG · Embeddings et recherche sémantique · Prompt engineering · Extraction de données non structurées (PDF) · Évaluation comparative de modèles · Visualisation (t-SNE)
 
